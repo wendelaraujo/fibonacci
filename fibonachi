@@ -1,0 +1,29 @@
+function isFibonacci(num) {
+    
+    let a = 0, b = 1;
+
+    
+    if (num === 0 || num === 1) {
+        return true;
+    }
+
+    
+    while (b < num) {
+        let temp = b;
+        b = a + b;
+        a = temp;
+    }
+
+    
+    return b === num;
+}
+
+
+let numero = parseInt(prompt("Informe um número: "));
+
+
+if (isFibonacci(numero)) {
+    alert(`O número ${numero} pertence à sequência de Fibonacci.`);
+} else {
+    alert(`O número ${numero} NÃO pertence à sequência de Fibonacci.`);
+}
